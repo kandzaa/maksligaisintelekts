@@ -20,41 +20,19 @@
 <section class="locations mega-section" id="locations">
   <div class="container">
     <div class="sec-heading  centered ">
-      <div class="content-area"><span class=" pre-title       wow fadeInUp " data-wow-delay=".2s">locations</span>
-        <h2 class=" title    wow fadeInUp" data-wow-delay=".4s">Find Us</h2>
-        <p class=" subtitle   wow fadeInUp " data-wow-delay=".6s">Lorem ipsum dolor sit amet consectetur adipisicing elit Omnis <br>id atque  dignissimos repellat quae ullam.</p>
-      </div>
+      <div class="content-area"><span class=" pre-title       wow fadeInUp " data-wow-delay=".2s">Contact</span>
+        <h2 class=" title    wow fadeInUp" data-wow-delay=".4s">Our <span class='hollow-text'>Contacts</span></h2>
+       </div>
     </div>
-    <div class="locations-content">
-      <div class="row">
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="location-box wow fadeInUp" data-wow-delay=".2s">
-            <div class="location-icon"><i class="bi bi-geo-alt icon"></i></div>
-            <div class="location-content">
-              <h3 class="location-title">Main Office</h3>
-              <p class="location-desc">123 Business Street<br>Riga, Latvia</p>
-              <p class="location-contact">Phone: +371 123 4567<br>Email: info@flex-it.lv</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="location-box wow fadeInUp" data-wow-delay=".4s">
-            <div class="location-icon"><i class="bi bi-building icon"></i></div>
-            <div class="location-content">
-              <h3 class="location-title">Development Center</h3>
-              <p class="location-desc">45 Tech Avenue<br>Riga, Latvia</p>
-              <p class="location-contact">Phone: +371 987 6543<br>Email: dev@flex-it.lv</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="location-box wow fadeInUp" data-wow-delay=".6s">
-            <div class="location-icon"><i class="bi bi-headset icon"></i></div>
-            <div class="location-content">
-              <h3 class="location-title">Support Center</h3>
-              <p class="location-desc">78 Support Lane<br>Riga, Latvia</p>
-              <p class="location-contact">Phone: +371 246 8135<br>Email: support@flex-it.lv</p>
-            </div>
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-6 col-lg-4  location-box wow fadeInUp" data-wow-delay="0.4s">
+        <div class="location-box-inner">
+          <div class="location-icon"><i class="flaticon-location font-icon"></i></div>
+          <div class="location-content">
+           </div>
+          <div class="location-contact-info">
+            <div class="contact-info-card"><i class="bi bi-envelope icon"></i><a class="text-lowercase  info" href="mailto:info@māksligaisintelekts.lv">info@māksligaisintelekts.lv</a></div>
+            <div class="contact-info-card"><i class="bi bi-phone icon"></i><a class="info" href="tel:28634568">28634568  </a></div>
           </div>
         </div>
       </div>
@@ -62,82 +40,59 @@
   </div>
 </section>
 
-<section class="contact-form mega-section" id="contact-form">
+
+
+<section class="contact-form-section mega-section" id="contact-form-section" style="background-color: #0a1628; padding: 100px 0;">
   <div class="container">
-    <div class="sec-heading  centered ">
-      <div class="content-area"><span class=" pre-title       wow fadeInUp " data-wow-delay=".2s">contact us</span>
-        <h2 class=" title    wow fadeInUp" data-wow-delay=".4s">Get in Touch</h2>
-        <p class=" subtitle   wow fadeInUp " data-wow-delay=".6s">Lorem ipsum dolor sit amet consectetur adipisicing elit Omnis <br>id atque  dignissimos repellat quae ullam.</p>
+    <div class="sec-heading centered">
+      <div class="content-area">
+        <h2 class="title wow fadeInUp" data-wow-delay=".2s" style="color: #fff; font-size: 48px; margin-bottom: 60px;">
+          Have Any Questions? Let's Answer Them
+        </h2>
       </div>
     </div>
-    <div class="contact-form-wrapper">
-      <div class="row">
-        <div class="col-12 col-lg-8">
-          <form class="contact-form" method="POST" action="{{ route('contact.en') }}">
-            @csrf
-            <div class="row">
-              <div class="col-12 col-md-6">
-                <div class="form-group">
-                  <label for="name">Name</label>
-                  <input type="text" id="name" name="name" class="form-control" required>
-                </div>
-              </div>
-              <div class="col-12 col-md-6">
-                <div class="form-group">
-                  <label for="email">Email</label>
-                  <input type="email" id="email" name="email" class="form-control" required>
-                </div>
-              </div>
-              <div class="col-12">
-                <div class="form-group">
-                  <label for="subject">Subject</label>
-                  <input type="text" id="subject" name="subject" class="form-control" required>
-                </div>
-              </div>
-              <div class="col-12">
-                <div class="form-group">
-                  <label for="message">Message</label>
-                  <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
-                </div>
-              </div>
-              <div class="col-12">
-                <div class="form-group">
-                  <button type="submit" class="btn-solid">Send Message</button>
-                </div>
-              </div>
+    <div class="contact-form-wrapper wow fadeInUp" data-wow-delay="0.4s">
+      <form class="contact-form" action="{{ route('contact.en') }}" method="post">
+        @csrf
+        <div class="row gx-4 gy-4">
+          <div class="col-12 col-md-6">
+            <div class="input-group">
+              <label class="form-label" for="name" style="color: #fff; margin-bottom: 10px; display: block;">Name <span style="color: #ff0000;">*</span></label>
+              <input class="form-input" type="text" name="name" id="name" required="required" 
+                style="background-color: transparent; border: 1px solid #2a3f5f; padding: 15px 20px; color: #fff; border-radius: 8px; width: 100%;">
             </div>
-          </form>
-        </div>
-        <div class="col-12 col-lg-4">
-          <div class="contact-info">
-            <h3>Contact Information</h3>
-            <div class="info-item">
-              <div class="info-icon"><i class="bi bi-envelope icon"></i></div>
-              <div class="info-text">
-                <strong>Email:</strong><br>info@flex-it.lv
-              </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="input-group">
+              <label class="form-label" for="email" style="color: #fff; margin-bottom: 10px; display: block;">E-Mail <span style="color: #ff0000;">*</span></label>
+              <input class="form-input" type="email" name="email" id="email" required="required"
+                style="background-color: transparent; border: 1px solid #2a3f5f; padding: 15px 20px; color: #fff; border-radius: 8px; width: 100%;">
             </div>
-            <div class="info-item">
-              <div class="info-icon"><i class="bi bi-telephone icon"></i></div>
-              <div class="info-text">
-                <strong>Phone:</strong><br>+371 123 4567
-              </div>
+          </div>
+          <div class="col-12">
+            <div class="input-group">
+              <label class="form-label" for="subject" style="color: #fff; margin-bottom: 10px; display: block;">Subject <span style="color: #ff0000;">*</span></label>
+              <input class="form-input" type="text" name="subject" id="subject" required="required"
+                style="background-color: transparent; border: 1px solid #2a3f5f; padding: 15px 20px; color: #fff; border-radius: 8px; width: 100%;">
             </div>
-            <div class="info-item">
-              <div class="info-icon"><i class="bi bi-geo-alt icon"></i></div>
-              <div class="info-text">
-                <strong>Address:</strong><br>123 Business Street<br>Riga, Latvia
-              </div>
+          </div>
+          <div class="col-12">
+            <div class="input-group">
+              <label class="form-label" for="message" style="color: #fff; margin-bottom: 10px; display: block;">Your Message <span style="color: #ff0000;">*</span></label>
+              <textarea class="form-textarea" name="message" id="message" rows="6" required="required"
+                style="background-color: transparent; border: 1px solid #2a3f5f; padding: 15px 20px; color: #fff; border-radius: 8px; width: 100%; resize: vertical;"></textarea>
             </div>
-            <div class="info-item">
-              <div class="info-icon"><i class="bi bi-clock icon"></i></div>
-              <div class="info-text">
-                <strong>Hours:</strong><br>Mon-Fri: 9AM-6PM<br>Sat-Sun: Closed
-              </div>
+          </div>
+          <div class="col-12">
+            <div class="form-submit-btn" style="margin-top: 20px;">
+              <button class="btn-solid" type="submit" 
+                style="background-color: #00d4ff; color: #0a1628; padding: 18px 40px; border: none; border-radius: 30px; font-weight: 600; font-size: 16px; cursor: pointer; transition: all 0.3s;">
+                Send Your Message
+              </button>
             </div>
           </div>
         </div>
-      </div>
+      </form>
     </div>
   </div>
 </section>

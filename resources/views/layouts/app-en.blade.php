@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="IT Solutions & Business Services Responsive Website">
+  <meta name="description" content="@yield('meta_description', 'IT Solutions & Business Services Responsive Website')">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   <link rel="icon" href="{{ asset('assets/images/fav-icon/fav-icon.png') }}">
@@ -33,7 +33,7 @@
 
   @include('partials.footer')
 
-  <div class="loading-screen" id="loading-screen"><span class="bar top-bar"></span><span class="bar down-bar"></span><span class="progress-line"></span><span class="loading-counter"> </span></div>
+ 
   <div class="back-to-top" id="back-to-top"><i class="bi bi-arrow-up icon "></i>
   </div>
   <div class="modal privacy-policy-modal fade" id="privacyPolicyModal" aria-labelledby="PrivacyPolicyModalLabel" aria-hidden="true">

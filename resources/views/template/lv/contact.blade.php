@@ -20,51 +20,19 @@
 <section class="locations mega-section" id="locations">
   <div class="container">
     <div class="sec-heading  centered ">
-      <div class="content-area"><span class=" pre-title       wow fadeInUp " data-wow-delay=".2s">lokācijas</span>
-        <h2 class=" title    wow fadeInUp" data-wow-delay=".4s">mūsu <span class='hollow-text'>lokācijas</span></h2>
-        <p class="subtitle   wow fadeInUp " data-wow-delay=".6s">Lorem ipsum dolor sit amet consectetur adipisicing elit Omnis <br>id atque  dignissimos repellat quae ullam.</p>
-      </div>
+      <div class="content-area"><span class=" pre-title       wow fadeInUp " data-wow-delay=".2s">Kontakti</span>
+        <h2 class=" title    wow fadeInUp" data-wow-delay=".4s">Mūsu <span class='hollow-text'>Kontakti</span></h2>
+         </div>
     </div>
-    <div class="row locations-row">
+    <div class="row justify-content-center">
       <div class="col-12 col-md-6 col-lg-4  location-box wow fadeInUp" data-wow-delay="0.2s">
         <div class="location-box-inner">
           <div class="location-icon"><i class="flaticon-location font-icon"></i></div>
           <div class="location-content">
-            <h3 class="location-title">Alexandria</h3>
-            <p class="location-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque repellendus minima reiciendis nobis dolore obcaecati.</p>
-          </div>
+           </div>
           <div class="location-contact-info">
-            <div class="contact-info-card"><i class="bi bi-envelope icon"></i><a class="text-lowercase  info" href="mailto:alexandria@support.com">alexandria@support.com</a></div>
-            <div class="contact-info-card"><i class="bi bi-geo-alt icon"></i><span class="text-lowercase  info">5 Xyz st., Abc, alexandria, egypt.</span></div>
-            <div class="contact-info-card"><i class="bi bi-phone icon"></i><a class="info" href="tel:+20123456789">+20123456789  </a></div>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-md-6 col-lg-4  location-box wow fadeInUp" data-wow-delay="0.4s">
-        <div class="location-box-inner">
-          <div class="location-icon"><i class="flaticon-location font-icon"></i></div>
-          <div class="location-content">
-            <h3 class="location-title">Cairo</h3>
-            <p class="location-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque repellendus minima reiciendis nobis dolore obcaecati.</p>
-          </div>
-          <div class="location-contact-info">
-            <div class="contact-info-card"><i class="bi bi-envelope icon"></i><a class="text-lowercase  info" href="mailto:cairo@support.com">cairo@support.com</a></div>
-            <div class="contact-info-card"><i class="bi bi-geo-alt icon"></i><span class="text-lowercase  info">5 Xyz st., Abc, cairo, egypt.</span></div>
-            <div class="contact-info-card"><i class="bi bi-phone icon"></i><a class="info" href="tel:+20123456789">+20123456789  </a></div>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-md-6 col-lg-4  location-box wow fadeInUp" data-wow-delay="0.6s">
-        <div class="location-box-inner">
-          <div class="location-icon"><i class="flaticon-location font-icon"></i></div>
-          <div class="location-content">
-            <h3 class="location-title">New York</h3>
-            <p class="location-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque repellendus minima reiciendis nobis dolore obcaecati.</p>
-          </div>
-          <div class="location-contact-info">
-            <div class="contact-info-card"><i class="bi bi-envelope icon"></i><a class="text-lowercase  info" href="mailto:newyork@support.com">newyork@support.com</a></div>
-            <div class="contact-info-card"><i class="bi bi-geo-alt icon"></i><span class="text-lowercase  info">5 Xyz st., Abc, new york, USA.</span></div>
-            <div class="contact-info-card"><i class="bi bi-phone icon"></i><a class="info" href="tel:+20123456789">+20123456789  </a></div>
+            <div class="contact-info-card"><i class="bi bi-envelope icon"></i><a class="text-lowercase  info" href="mailto:info@māksligaisintelekts.lv">info@māksligaisintelekts.lv</a></div>
+            <div class="contact-info-card"><i class="bi bi-phone icon"></i><a class="info" href="tel:28634568">28634568</a></div>
           </div>
         </div>
       </div>
@@ -72,66 +40,54 @@
   </div>
 </section>
 
-<section class="map-section mega-section" id="map-section">
-  <div class="container">
-    <div class="sec-heading  centered ">
-      <div class="content-area"><span class=" pre-title       wow fadeInUp " data-wow-delay=".2s">karte</span>
-        <h2 class=" title    wow fadeInUp" data-wow-delay=".4s">atrodi mūs <span class='hollow-text'>kartē</span></h2>
-        <p class="subtitle   wow fadeInUp " data-wow-delay=".6s">Lorem ipsum dolor sit amet consectetur adipisicing elit Omnis <br>id atque  dignissimos repellat quae ullam.</p>
-      </div>
-    </div>
-    <div class="map-wrapper wow fadeInUp" data-wow-delay="0.8s">
-      <div class="map-container">
-        <iframe class="map-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d317718.69319292053!2d-0.3817765050863085!3d51.528307984912544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C%20UK!5e0!3m2!1sen!2seg!4v1613762954590!5m2!1sen!2seg" loading="lazy"></iframe>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section class="contact-form-section mega-section" id="contact-form-section">
+<section class="contact-form-section mega-section" id="contact-form-section" style="background-color: #0a1628; padding: 100px 0;">
   <div class="container">
-    <div class="sec-heading  centered ">
-      <div class="content-area"><span class=" pre-title       wow fadeInUp " data-wow-delay=".2s">Kontakti</span>
-        <h2 class=" title    wow fadeInUp" data-wow-delay=".4s">nosūti mums <span class='hollow-text'>ziņu</span></h2>
-        <p class="subtitle   wow fadeInUp " data-wow-delay=".6s">Lorem ipsum dolor sit amet consectetur adipisicing elit Omnis <br>id atque  dignissimos repellat quae ullam.</p>
+    <div class="sec-heading centered">
+      <div class="content-area">
+        <h2 class="title wow fadeInUp" data-wow-delay=".2s" style="color: #fff; font-size: 48px; margin-bottom: 60px;">
+          Ir kādi jautājumi? Atbildēsim uz tiem
+        </h2>
       </div>
     </div>
-    <div class="contact-form-wrapper wow fadeInUp" data-wow-delay="0.8s">
-      <form class="contact-form" action="#" method="post">
+    <div class="contact-form-wrapper wow fadeInUp" data-wow-delay="0.4s">
+      <form class="contact-form" action="{{ route('contact.lv') }}" method="post">
+        @csrf
         <div class="row gx-4 gy-4">
           <div class="col-12 col-md-6">
             <div class="input-group">
-              <label class="form-label" for="name">Vārds</label>
-              <input class="form-input" type="text" name="name" id="name" placeholder="Jūsu vārds" required="required">
+              <label class="form-label" for="name" style="color: #fff; margin-bottom: 10px; display: block;">Vārds <span style="color: #ff0000;">*</span></label>
+              <input class="form-input" type="text" name="name" id="name" required="required" 
+                style="background-color: transparent; border: 1px solid #2a3f5f; padding: 15px 20px; color: #fff; border-radius: 8px; width: 100%;">
             </div>
           </div>
           <div class="col-12 col-md-6">
             <div class="input-group">
-              <label class="form-label" for="email">E-pasts</label>
-              <input class="form-input" type="email" name="email" id="email" placeholder="Jūsu e-pasts" required="required">
-            </div>
-          </div>
-          <div class="col-12 col-md-6">
-            <div class="input-group">
-              <label class="form-label" for="phone">Tālrunis</label>
-              <input class="form-input" type="tel" name="phone" id="phone" placeholder="Jūsu tālrunis" required="required">
-            </div>
-          </div>
-          <div class="col-12 col-md-6">
-            <div class="input-group">
-              <label class="form-label" for="subject">Temats</label>
-              <input class="form-input" type="text" name="subject" id="subject" placeholder="Jūsu temats" required="required">
+              <label class="form-label" for="email" style="color: #fff; margin-bottom: 10px; display: block;">E-Mail <span style="color: #ff0000;">*</span></label>
+              <input class="form-input" type="email" name="email" id="email" required="required"
+                style="background-color: transparent; border: 1px solid #2a3f5f; padding: 15px 20px; color: #fff; border-radius: 8px; width: 100%;">
             </div>
           </div>
           <div class="col-12">
             <div class="input-group">
-              <label class="form-label" for="message">Ziņa</label>
-              <textarea class="form-textarea" name="message" id="message" rows="5" placeholder="Jūsu ziņa" required="required"></textarea>
+              <label class="form-label" for="subject" style="color: #fff; margin-bottom: 10px; display: block;">Temats <span style="color: #ff0000;">*</span></label>
+              <input class="form-input" type="text" name="subject" id="subject" required="required"
+                style="background-color: transparent; border: 1px solid #2a3f5f; padding: 15px 20px; color: #fff; border-radius: 8px; width: 100%;">
             </div>
           </div>
           <div class="col-12">
-            <div class="form-submit-btn">
-              <button class="btn-solid" type="submit">Nosūtīt ziņu</button>
+            <div class="input-group">
+              <label class="form-label" for="message" style="color: #fff; margin-bottom: 10px; display: block;">Jūsu ziņa <span style="color: #ff0000;">*</span></label>
+              <textarea class="form-textarea" name="message" id="message" rows="6" required="required"
+                style="background-color: transparent; border: 1px solid #2a3f5f; padding: 15px 20px; color: #fff; border-radius: 8px; width: 100%; resize: vertical;"></textarea>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="form-submit-btn" style="margin-top: 20px;">
+              <button class="btn-solid" type="submit" 
+                style="background-color: #00d4ff; color: #0a1628; padding: 18px 40px; border: none; border-radius: 30px; font-weight: 600; font-size: 16px; cursor: pointer; transition: all 0.3s;">
+                Nosūtīt ziņu
+              </button>
             </div>
           </div>
         </div>

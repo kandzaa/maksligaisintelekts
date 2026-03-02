@@ -1,34 +1,5 @@
 @charset "UTF-8";
-/*** LTR websites ***/
-/*===================================================
-Project: flex-it - IT Solutions & Business Services Responsive HTML5 Bootstrap5  Website Template 
-Auther: amin-themes
-Version: 2.0
-Last change: 22 March 2023
-Template Description: IT Solutions & Business Services Responsive HTML5 Bootstrap5  Website Template 
-====================================================*/
-/*==
-- global-rules and helper classes
-- page-headers
-- page-hero 
-- services
-- about 
-- portfolio 
-- portfolio-single  
-- our-team 
-- our-clients 
-- faq 
-- testimonials 
-- contact-us 
-- take-action 
-- page-footer 
-- blog
-- 404 Page
-- pricing
-- stats
-- Dark Theme Rules
-===*/
-/* start global, helper classes , Components Rules*/
+
 :root {
   /*Colors CSS Varibales*/
   /*================  main-color values */
@@ -862,27 +833,27 @@ a:hover {
   align-items: center;
   text-decoration: none !important;
   text-align: center;
-  text-transform: capitalize;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   outline: none;
-  border: 2px solid transparent;
-  border-radius: 0.25rem;
-  border-bottom-left-radius: 1rem;
-  border-top-right-radius: 1rem;
-  padding: 0.75rem 2.25rem;
-  font-size: 1.1rem;
-  font-weight: 500;
-  box-shadow: 0px 3px 10px -5px rgba(var(--clr-dark-blue-rgb), 0.15);
-  transition: all 0.3s ease-in-out 0s;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 0.875rem 1.75rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   z-index: 0;
-  margin-right: 1rem;
+  margin-right: 0.75rem;
+  backdrop-filter: blur(10px);
 }
 .btn-outline .icon, .btn-solid .icon {
   display: flex;
-  margin-left: 0.5rem;
-  font-size: 1.5rem;
+  margin-left: 0.75rem;
+  font-size: 0.9rem;
   line-height: 1;
-  transition: transform 0.3s ease-in-out 0s;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-outline:focus, .btn-solid:focus {
@@ -984,25 +955,29 @@ a:hover {
 }
 
 .btn-solid {
-  color: var(--clr-white);
-  background-color: var(--clr-main);
-  border-color: var(--clr-main);
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 .btn-solid:hover {
-  color: var(--clr-main);
-  background-color: transparent;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.95);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px);
 }
 
 .btn-outline {
-  /**/
-  border: 2px solid;
-  color: var(--clr-main);
-  border-color: var(--clr-main);
-  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 .btn-outline:hover {
-  color: var(--clr-white);
-  background-color: var(--clr-main);
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px);
 }
 
 .play-btn-col-dir .play-video-btn {
@@ -1657,173 +1632,6 @@ body.rounded-btns .read-more {
   background-color: rgba(var(--clr-danger-rgb), 0.5);
 }
 
-.loading-screen {
-  position: fixed;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 9999999;
-  background: var(--clr-dark-blue);
-}
-.loading-screen .bar {
-  position: absolute;
-  height: 100%;
-  width: 50%;
-  background-color: var(--clr-main);
-}
-.loading-screen .top-bar {
-  top: 0;
-  left: 0;
-  right: auto;
-  bottom: auto;
-}
-.loading-screen .down-bar {
-  bottom: 0;
-  top: auto;
-  right: 0;
-  left: auto;
-}
-.loading-screen .progress-line {
-  position: absolute;
-  width: 100%;
-  top: 60%;
-  left: 0;
-  right: auto;
-  height: 1px;
-  background-color: rgba(var(--clr-white-rgb), 0.35);
-  transform: scale(0);
-  transform-origin: center;
-}
-.loading-screen .loading-counter {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: var(--clr-white);
-  font-size: 3rem;
-  font-weight: 800;
-}
-
-/* End loading screen rules */
-.header-search-box {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 0;
-  background-color: rgba(var(--clr-dark-blue-rgb), 0.95);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  visibility: hidden;
-  opacity: 0;
-  transition: all 0.5s ease-in-out 0s;
-  z-index: 1200;
-}
-.header-search-box.show {
-  height: 100%;
-  visibility: visible;
-  opacity: 1;
-}
-.header-search-box.show .search-form {
-  visibility: visible;
-  opacity: 1;
-  transform: translateY(0);
-}
-.header-search-box .close-search {
-  position: absolute;
-  right: 25%;
-  top: 25%;
-  width: 3.5rem;
-  height: 3.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-.header-search-box .close-search:before, .header-search-box .close-search::after {
-  content: "";
-  height: 2px;
-  width: 40px;
-  background-color: var(--clr-white);
-  display: block;
-  transform-origin: center;
-}
-.header-search-box .close-search:before {
-  transform: rotate(45deg) translateX(2px);
-}
-.header-search-box .close-search:after {
-  transform: rotate(-45deg) translateX(1px);
-}
-@media (max-width: 767px) {
-  .header-search-box .close-search {
-    right: 5%;
-  }
-}
-.header-search-box .search-form {
-  position: relative;
-  visibility: hidden;
-  opacity: 0;
-  transform: translateY(5rem);
-  transition: all 0.5s ease-in-out 0s;
-  transition-delay: 0.25s;
-  width: 50%;
-}
-@media (max-width: 1199px) {
-  .header-search-box .search-form {
-    width: 50%;
-  }
-}
-@media (max-width: 767px) {
-  .header-search-box .search-form {
-    width: 80%;
-  }
-}
-.header-search-box .search-form .search-lbl {
-  visibility: hidden;
-  opacity: 0;
-  width: 0;
-  position: absolute;
-  left: 9999999px;
-}
-.header-search-box .search-form input[type=search]::-webkit-search-decoration,
-.header-search-box .search-form input[type=search]::-webkit-search-cancel-button,
-.header-search-box .search-form input[type=search]::-webkit-search-results-button,
-.header-search-box .search-form input[type=search]::-webkit-search-results-decoration {
-  -webkit-appearance: none;
-}
-.header-search-box .search-form .search-input {
-  border: none;
-  border-bottom: 2px solid var(--clr-main);
-  font-size: 2.5rem;
-  outline: none;
-  color: var(--clr-white);
-  background-color: transparent;
-  width: 100%;
-}
-@media (max-width: 767px) {
-  .header-search-box .search-form .search-input {
-    font-size: 1.5rem;
-  }
-}
-.header-search-box .search-form .search-btn {
-  -webkit-appearance: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 1.25rem;
-  left: auto;
-  outline: none;
-  border: none;
-  background: transparent;
-  color: var(--clr-main);
-  font-size: 1.5rem;
-}
 
 /*ُEnd global, helper classes , components Rules*/
 /* Start .page-header Rules   */

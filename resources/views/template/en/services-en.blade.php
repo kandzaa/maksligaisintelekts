@@ -25,8 +25,7 @@
         <h2 class=" title    wow fadeInUp" data-wow-delay=".4s"><span class='hollow-text'>Our</span> Services</h2>
         <p class="subtitle   wow fadeInUp " data-wow-delay=".6s">Lorem ipsum dolor sit amet consectetur adipisicing elit Omnis <br>id atque  dignissimos repellat quae ullam.</p>
       </div>
-      <div class=" cta-area   wow fadeInUp" data-wow-delay=".8s"><a class="cta-btn btn-solid    ">View All Services <i class="bi bi-arrow-right icon "></i></a></div>
-    </div>
+       </div>
     <div class="row gx-4 gy-4 services-row ">  
       <div class="col-12 col-md-6  col-lg-4 mx-auto ">
         <div class="box service-box  wow fadeInUp reveal-start" data-wow-offset="0" data-wow-delay=".1s">

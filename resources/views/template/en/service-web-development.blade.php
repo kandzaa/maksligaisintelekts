@@ -1,5 +1,9 @@
 @extends('layouts.app-en')
 
+@section('meta_description')
+Professional web development services including custom websites, web applications, and e-commerce solutions. We build responsive, fast, and SEO-friendly websites.
+@stop
+
 @section('content')
 <section class="d-flex align-items-center page-hero  inner-page-hero " id="page-hero">
   <div class="overlay-photo-image-bg parallax" data-bg-img="{{ asset('assets/images/hero/inner-page-hero.jpg') }}" data-bg-opacity="1"></div>

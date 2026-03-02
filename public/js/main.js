@@ -40,18 +40,7 @@ $(function () {
     }
   }
 
-  // Start open/close navbar search box
-  $(".header-search-box form").on("click", function (e) {
-    e.stopPropagation();
-  });
 
-  $(".header-search-btn").on("click", function () {
-    $(".header-search-box").addClass("show");
-
-    setTimeout(function () {
-      $(".search-input").focus();
-    }, 1000);
-  });
 
   /* ********* Start dark mode switcher ***********/
 
@@ -119,10 +108,6 @@ $(function () {
      START #page-header js rules
    ---------------------------------- */
 
-  /* *******  start open/close navbar search box   ********/
-  $(".header-search-box .close-search , .header-search-box").on("click", () => {
-    $(".header-search-box").removeClass("show");
-  });
 
   /* Start bootstrap Scrollspy Options  */
   //on one page demos only
@@ -278,26 +263,7 @@ $(function () {
     });
   });
 
-  /* ******* Start Percentage loading screen interactions ********/
-  let percentage = 0;
-  let LoadingCounter = setInterval(function () {
-    if (percentage <= 100) {
-      // $('#loading-screen ').css('opacity', (100 - percentage));
-      $("#loading-screen .loading-counter").text(percentage + "%");
-      $("#loading-screen .bar").css("width", (100 - percentage) / 2 + "%");
-      $("#loading-screen .progress-line").css(
-        "transform",
-        "scale(" + percentage / 100 + ")"
-      );
-      percentage++;
-    } else {
-      $("#loading-screen").fadeOut(500);
-      setTimeout(() => {
-        $("#loading-screen").remove();
-      }, 1500);
-      clearInterval(LoadingCounter);
-    }
-  }, 10);
+
 
   main_window.on("scroll", function () {
     if ($(this).scrollTop() > 50) {

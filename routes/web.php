@@ -1,11 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\NewsController;
+use App\Http\Controllers\BlogController;
 
 // Latviski routes
 Route::prefix('lv')->group(function () {
     Route::view('/', 'template.lv.home')->name('home.lv');
-    Route::view('/blog', 'template.lv.blog')->name('blog.lv');
+    Route::get('/blog', [BlogController::class, 'indexLv'])->name('blog.lv');
+    Route::get('/news/{slug}', [BlogController::class, 'showLv'])->name('news.show.lv');
     Route::view('/contact', 'template.lv.contact')->name('contact.lv');
     Route::view('/services', 'template.lv.services')->name('services.lv');
     Route::view('/development', 'template.lv.development')->name('development.lv');
@@ -20,7 +24,8 @@ Route::prefix('lv')->group(function () {
 //angļu val
 Route::prefix('en')->group(function () {
     Route::view('/', 'template.en.home-en')->name('home.en');
-    Route::view('/blog', 'template.en.blog-en')->name('blog.en');
+    Route::get('/blog', [BlogController::class, 'indexEn'])->name('blog.en');
+    Route::get('/news/{slug}', [BlogController::class, 'showEn'])->name('news.show.en');
     Route::view('/contact', 'template.en.contact-en')->name('contact.en');
     Route::view('/services', 'template.en.services-en')->name('services.en');
     Route::view('/development', 'template.en.development-en')->name('development.en');
@@ -30,6 +35,25 @@ Route::prefix('en')->group(function () {
     Route::view('/services/apps', 'template.en.service-apps')->name('service-apps.en');
     Route::view('/services/seo', 'template.en.service-seo')->name('service-seo.en');
     Route::view('/services/data-analysis', 'template.en.service-data-analysis')->name('service-data-analysis.en');
+});
+
+// Admin routes
+Route::prefix('mz-admin')->group(function () {
+    Route::get('/login', [AdminController::class, 'showLogin'])->name('admin.login');
+    Route::post('/login', [AdminController::class, 'login'])->name('admin.login.post');
+    Route::post('/logout', [AdminController::class, 'logout'])->name('admin.logout');
+    
+    Route::middleware('admin.auth')->group(function () {
+        Route::get('/', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+        
+        // News management
+        Route::get('/news', [NewsController::class, 'index'])->name('admin.news.index');
+        Route::get('/news/create', [NewsController::class, 'create'])->name('admin.news.create');
+        Route::post('/news', [NewsController::class, 'store'])->name('admin.news.store');
+        Route::get('/news/{news}/edit', [NewsController::class, 'edit'])->name('admin.news.edit');
+        Route::put('/news/{news}', [NewsController::class, 'update'])->name('admin.news.update');
+        Route::delete('/news/{news}', [NewsController::class, 'destroy'])->name('admin.news.destroy');
+    });
 });
 
 // default uz latviešu

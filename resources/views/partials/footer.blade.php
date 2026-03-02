@@ -45,9 +45,8 @@
       <div class="col-12     col-lg-4 footer-col ">
         <h2 class=" footer-col-title    ">contact information</h2>
         <div class="footer-col-content-wrapper">
-          <div class="contact-info-card"><i class="bi bi-envelope icon"></i><a class="text-lowercase  info" href="mailto:example@support.com">example@support.com</a></div>
-          <div class="contact-info-card"><i class="bi bi-geo-alt icon"></i><span class="text-lowercase  info">5 Xyz st., Abc, alexandria, egypt.</span></div>
-          <div class="contact-info-card"><i class="bi bi-phone icon"></i><a class="info" href="tel:+20123456789">+20123456789  </a></div>
+          <div class="contact-info-card"><i class="bi bi-envelope icon"></i><a class="text-lowercase  info" href="mailto:info@māksligaisintelekts.lv">info@māksligaisintelekts.lv</a></div>
+          <div class="contact-info-card"><i class="bi bi-phone icon"></i><a class="info" href="tel:28634568">28634568  </a></div>
           <div class="contact-info-card">
             <div class="social-icons">
               <div class="sc-wrapper dir-row sc-size-32">
@@ -71,7 +70,7 @@
           <p class="creadits">
             &copy; {{ date('Y') }}
             Created by:
-            <a class="link" href="#0">amin-themes</a>
+            <a class="link" href="#0">Devera</a>
           </p>
         </div>
         <div class="col-12 col-md-6 d-flex justify-content-end">
