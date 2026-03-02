@@ -34,12 +34,13 @@ Route::prefix('en')->group(function () {
 
 // Admins
 Route::prefix('mz-admin')->group(function () {
-    Route::get('/login', [AdminController::class, 'showLogin'])->name('admin.login');
+    Route::get('/', [AdminController::class, 'showLogin'])->name('admin.login');
+    Route::get('/login', [AdminController::class, 'showLogin'])->name('admin.login.page');
     Route::post('/login', [AdminController::class, 'login'])->name('admin.login.post');
     Route::post('/logout', [AdminController::class, 'logout'])->name('admin.logout');
     
     Route::middleware('admin.auth')->group(function () {
-        Route::get('/', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+        Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
         
         // News 
         Route::get('/news', [NewsController::class, 'index'])->name('admin.news.index');

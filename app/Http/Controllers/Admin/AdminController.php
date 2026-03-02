@@ -13,6 +13,11 @@ class AdminController extends Controller
 {
     public function showLogin()
     {
+        // If admin is already logged in, redirect to dashboard
+        if (session('admin_logged_in')) {
+            return redirect()->route('admin.dashboard');
+        }
+        
         return view('admin.login');
     }
 
