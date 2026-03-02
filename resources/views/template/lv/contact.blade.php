@@ -51,7 +51,29 @@
       </div>
     </div>
     <div class="contact-form-wrapper wow fadeInUp" data-wow-delay="0.4s">
-      <form class="contact-form" action="{{ route('contact.lv') }}" method="post">
+      @if(session('success'))
+        <div class="alert alert-success" style="background: rgba(76, 175, 80, 0.2); border: 1px solid rgba(76, 175, 80, 0.3); color: #4CAF50; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+          {{ session('success') }}
+        </div>
+      @endif
+      
+      @if(session('error'))
+        <div class="alert alert-danger" style="background: rgba(244, 67, 54, 0.2); border: 1px solid rgba(244, 67, 54, 0.3); color: #f44336; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+          {{ session('error') }}
+        </div>
+      @endif
+      
+      @if($errors->any())
+        <div class="alert alert-danger" style="background: rgba(244, 67, 54, 0.2); border: 1px solid rgba(244, 67, 54, 0.3); color: #f44336; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+          <ul style="margin: 0; padding-left: 20px;">
+            @foreach($errors->all() as $error)
+              <li>{{ $error }}</li>
+            @endforeach
+          </ul>
+        </div>
+      @endif
+      
+      <form class="contact-form" action="{{ route('contact.lv.post') }}" method="post">
         @csrf
         <div class="row gx-4 gy-4">
           <div class="col-12 col-md-6">

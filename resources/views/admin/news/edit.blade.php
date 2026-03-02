@@ -41,7 +41,7 @@
             <div class="mb-3">
                 <label for="image" class="form-label">Image</label>
                 <input type="file" class="form-control" id="image" name="image" accept="image/*">
-                <div class="form-text">Maximum file size: 2MB. Allowed formats: JPEG, PNG, JPG, GIF</div>
+                <div class="form-text" style="color: white;">Maximum file size: 2MB. Allowed formats: JPEG, PNG, JPG, GIF</div>
                 
                 @if($news->image)
                     <div class="mt-2">
@@ -80,7 +80,7 @@
             <div class="mb-3">
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="published" name="published" value="1" {{ old('published', $news->published) ? 'checked' : '' }}>
-                    <label class="form-check-label" for="published">
+                    <label class="form-check-label" style="color: white;" for="published">
                         Published (visible on website)
                     </label>
                 </div>
@@ -96,5 +96,16 @@
             </div>
         </form>
     </div>
-</div>
+    
+    <div class="mt-3">
+        
+            <p style="margin-bottom: 0; color: white; margin-left: 10px;">Deleting this news article is permanent and cannot be undone.</p>
+            <form method="POST" action="{{ route('admin.news.destroy', $news) }}" onsubmit="return confirm('Are you sure you want to delete this news article? This action cannot be undone!')" style="display: inline;">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger btn-sm" style="margin:10px">
+                    <i class="fas fa-trash me-1"></i> Delete News Permanently
+                </button>
+            </form>
+    </div>
 @endsection

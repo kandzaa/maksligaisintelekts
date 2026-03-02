@@ -100,10 +100,26 @@
                 <div class="row align-items-center">
                     <div class="col">
                         <h5 class="card-title mb-0">Total News</h5>
-                        <p class="card-text display-4">{{ App\Models\News::count() }}</p>
+                        <p class="card-text display-4">{{ $totalNews }}</p>
                     </div>
                     <div class="col-auto">
                         <i class="fas fa-newspaper fa-2x opacity-75"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card stat-card">
+            <div class="card-body">
+                <div class="row align-items-center">
+                    <div class="col">
+                        <h5 class="card-title mb-0">Services</h5>
+                        <p class="card-text display-4">{{ $totalServices }}</p>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-cogs fa-2x opacity-75"></i>
                     </div>
                 </div>
             </div>
@@ -136,22 +152,6 @@
                     </div>
                     <div class="col-auto">
                         <i class="fas fa-edit fa-2x opacity-75"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card stat-card">
-            <div class="card-body">
-                <div class="row align-items-center">
-                    <div class="col">
-                        <h5 class="card-title mb-0">This Month</h5>
-                        <p class="card-text display-4">{{ App\Models\News::whereMonth('created_at', now()->month)->count() }}</p>
-                    </div>
-                    <div class="col-auto">
-                        <i class="fas fa-calendar fa-2x opacity-75"></i>
                     </div>
                 </div>
             </div>
@@ -206,6 +206,58 @@
                 @endif
             </div>
         </div>
+        
+        <div class="card mt-4">
+            <div class="card-header">
+                <h5 class="card-title mb-0">Recent Services</h5>
+            </div>
+            <div class="card-body">
+                @if($recentServices = App\Models\Service::latest()->take(5)->get())
+                    <div class="dashboard-table">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Title</th>
+                                        <th>Price</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($recentServices as $service)
+                                        <tr>
+                                            <td>{{ Str::limit($service->title_en, 50) }}</td>
+                                            <td>
+                                                @if($service->price)
+                                                    <span style="color: #00d4ff; font-weight: 600;">{{ $service->price }}</span>
+                                                @else
+                                                    <span style="color: rgba(255, 255, 255, 0.4);">-</span>
+                                                @endif
+                                            </td>
+                                            <td>
+                                                @if($service->published)
+                                                    <span class="dashboard-status-badge dashboard-status-published">Published</span>
+                                                @else
+                                                    <span class="dashboard-status-badge dashboard-status-draft">Draft</span>
+                                                @endif
+                                            </td>
+                                            <td>
+                                                <a href="{{ route('admin.services.edit', $service) }}" class="btn btn-sm dashboard-action-btn">
+                                                    <i class="fas fa-edit"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                @else
+                    <p class="text-muted">No services found.</p>
+                @endif
+            </div>
+        </div>
     </div>
 
     <div class="col-lg-4">
@@ -216,10 +268,16 @@
             <div class="card-body">
                 <div class="d-grid gap-2">
                     <a href="{{ route('admin.news.create') }}" class="btn btn-primary">
-                        <i class="fas fa-plus me-2"></i> Add New News
+                        <i class="fas fa-plus me-2"></i> Add News
+                    </a>
+                    <a href="{{ route('admin.services.create') }}" class="btn btn-primary">
+                        <i class="fas fa-plus me-2"></i> Add New Service
                     </a>
                     <a href="{{ route('admin.news.index') }}" class="btn btn-outline-secondary">
                         <i class="fas fa-list me-2"></i> Manage All News
+                    </a>
+                    <a href="{{ route('admin.services.index') }}" class="btn btn-outline-secondary">
+                        <i class="fas fa-list me-2"></i> Manage All Services
                     </a>
                 </div>
             </div>

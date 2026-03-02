@@ -27,60 +27,32 @@
       </div>
        </div>
     <div class="row gx-4 gy-4 services-row ">  
-      <div class="col-12 col-md-6  col-lg-4 mx-auto ">
-        <div class="box service-box  wow fadeInUp reveal-start" data-wow-offset="0" data-wow-delay=".1s">
-          <div class="service-icon"><i class="flaticon-web-development font-icon"></i></div><span class="service-num hollow-text">1    </span>
-          <div class="service-content">
-            <h3 class="service-title">Web Development</h3>
-            <p class="service-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque repellendus minima reiciendis nobis dolore obcaecati.</p>
-          </div><a class="read-more" href="{{ route('service-web-development.en') }}">Read More<i class="bi bi-arrow-right icon "></i></a>
+      @forelse($services as $index => $service)
+        <div class="col-12 col-md-6  col-lg-4 mx-auto ">
+          <div class="box service-box  wow fadeInUp reveal-start" data-wow-offset="0" data-wow-delay="{{ $index * 0.1 }}s">
+            @if($service->image)
+              <div class="service-icon">
+                <img src="{{ asset('assets/images/services/' . $service->image) }}" alt="{{ $service->title_en }}" style="width: 60px; height: 60px; object-fit: cover; border-radius: 8px;">
+              </div>
+            @else
+              <div class="service-icon"><i class="flaticon-web-development font-icon"></i></div>
+            @endif
+            <span class="service-num hollow-text">{{ $index + 1 }}</span>
+            <div class="service-content">
+              <h3 class="service-title">{{ $service->title_en }}</h3>
+              <p class="service-text">{{ Str::limit($service->description_en ?: strip_tags($service->content_en), 120) }}</p>
+              @if($service->price)
+                <div class="service-price" style="color: #00d4ff; font-weight: 600; margin-top: 10px;">{{ $service->price }}</div>
+              @endif
+            </div>
+            <a class="read-more" href="{{ route('services.show.en', $service->slug) }}">Read More<i class="bi bi-arrow-right icon "></i></a>
+          </div>
         </div>
-      </div>
-      <div class="col-12 col-md-6  col-lg-4 mx-auto ">
-        <div class="box service-box  wow fadeInUp reveal-start" data-wow-offset="0" data-wow-delay=".2s">
-          <div class="service-icon"><i class="flaticon-nanotechnology font-icon"></i></div><span class="service-num hollow-text">2    </span>
-          <div class="service-content">
-            <h3 class="service-title">Digital Marketing</h3>
-            <p class="service-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque repellendus minima reiciendis nobis dolore obcaecati.</p>
-          </div><a class="read-more" href="{{ route('service-digital-marketing.en') }}">Read More<i class="bi bi-arrow-right icon "></i></a>
+      @empty
+        <div class="col-12 text-center">
+          <p style="color: rgba(255, 255, 255, 0.6);">No services available at the moment.</p>
         </div>
-      </div>
-      <div class="col-12 col-md-6  col-lg-4 mx-auto  ">
-        <div class="box service-box  wow fadeInUp reveal-start" data-wow-offset="0" data-wow-delay=".3s">
-          <div class="service-icon"><i class="flaticon-web-domain font-icon"></i></div><span class="service-num hollow-text">3    </span>
-          <div class="service-content">
-            <h3 class="service-title">SaaS Development</h3>
-            <p class="service-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque repellendus minima reiciendis nobis dolore obcaecati.</p>
-          </div><a class="read-more" href="{{ route('service-saas.en') }}">Read More<i class="bi bi-arrow-right icon "></i></a>
-        </div>
-      </div>
-      <div class="col-12 col-md-6  col-lg-4 mx-auto  ">
-        <div class="box service-box  wow fadeInUp reveal-start" data-wow-offset="0" data-wow-delay=".4s">
-          <div class="service-icon"><i class="flaticon-profile font-icon"></i></div><span class="service-num hollow-text">4    </span>
-          <div class="service-content">
-            <h3 class="service-title">App Development</h3>
-            <p class="service-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque repellendus minima reiciendis nobis dolore obcaecati.</p>
-          </div><a class="read-more" href="{{ route('service-apps.en') }}">Read More<i class="bi bi-arrow-right icon "></i></a>
-        </div>
-      </div>
-      <div class="col-12 col-md-6  col-lg-4 mx-auto  ">
-        <div class="box service-box  wow fadeInUp reveal-start" data-wow-offset="0" data-wow-delay=".5s">
-          <div class="service-icon"><i class="flaticon-search font-icon"></i></div><span class="service-num hollow-text">5    </span>
-          <div class="service-content">
-            <h3 class="service-title">SEO Services</h3>
-            <p class="service-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque repellendus minima reiciendis nobis dolore obcaecati.</p>
-          </div><a class="read-more" href="{{ route('service-seo.en') }}">Read More<i class="bi bi-arrow-right icon "></i></a>
-        </div>
-      </div>
-      <div class="col-12 col-md-6  col-lg-4 mx-auto  ">
-        <div class="box service-box  wow fadeInUp  reveal-start" data-wow-offset="0" data-wow-delay=".6s">
-          <div class="service-icon"><i class="flaticon-strategy font-icon"></i></div><span class="service-num hollow-text">6    </span>
-          <div class="service-content">
-            <h3 class="service-title">Data Analysis</h3>
-            <p class="service-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque repellendus minima reiciendis nobis dolore obcaecati.</p>
-          </div><a class="read-more" href="{{ route('service-data-analysis.en') }}">Read More<i class="bi bi-arrow-right icon "></i></a>
-        </div>
-      </div>
+      @endforelse
     </div>
   </div>
 </section>

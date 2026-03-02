@@ -168,6 +168,32 @@
             color: #ffffff;
             box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.1);
         }
+        
+        .form-label {
+            color: #ffffff;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-check-label {
+            color: #ffffff;
+        }
+        
+        .text-danger {
+            color: #ff6b6b !important;
+        }
+        
+        .text-muted {
+            color: rgba(255, 255, 255, 0.7) !important;
+        }
+        
+        .breadcrumb-link {
+            color: rgba(255, 255, 255, 0.8) !important;
+        }
+        
+        .breadcrumb-item.active {
+            color: rgba(255, 255, 255, 0.9) !important;
+        }
     </style>
 </head>
 <body>
@@ -177,8 +203,8 @@
             <nav class="col-md-3 col-lg-2 d-md-block sidebar collapse">
                 <div class="position-sticky pt-4">
                     <div class="text-center mb-4">
-                        <h4 style="color: #ffffff; font-weight: 300; letter-spacing: 2px;">MZ ADMIN</h4>
-                        <small style="color: #666; text-transform: uppercase; letter-spacing: 1px;">Content Management</small>
+                        <h4 style="color: #ffffff; font-weight: 300; letter-spacing: 2px;">Māksligais Intelekts</h4>
+                        <small style="color: #666; text-transform: uppercase; letter-spacing: 1px;">Admin</small>
                     </div>
                     
                     <ul class="nav flex-column">
@@ -190,6 +216,11 @@
                         <li class="nav-item">
                             <a class="nav-link {{ request()->routeIs('admin.news.*') ? 'active' : '' }}" href="{{ route('admin.news.index') }}">
                                 <i class="fas fa-newspaper me-2"></i> News & Articles
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ request()->routeIs('admin.services.*') ? 'active' : '' }}" href="{{ route('admin.services.index') }}">
+                                <i class="fas fa-cogs me-2"></i> Services
                             </a>
                         </li>
                     </ul>
