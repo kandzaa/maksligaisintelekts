@@ -149,11 +149,6 @@
             <button type="submit" class="btn-login">LOGIN</button>
         </form>
         
-        <div class="mt-3 text-center">
-            <small class="text-muted">
-                admin@mz-admin.com / admin123
-            </small>
-        </div>
     </div>
 </body>
 </html>
