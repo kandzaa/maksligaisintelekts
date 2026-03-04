@@ -4,9 +4,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\ServiceController as AdminServiceController;
+use App\Http\Controllers\Admin\DevelopmentController as AdminDevelopmentController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\DevelopmentController;
 
 // Latviski routes
 Route::prefix('lv')->group(function () {
@@ -17,7 +19,8 @@ Route::prefix('lv')->group(function () {
     Route::post('/contact', [ContactController::class, 'sendLv'])->name('contact.lv.post');
     Route::get('/services', [ServiceController::class, 'indexLv'])->name('services.lv');
     Route::get('/services/{slug}', [ServiceController::class, 'showLv'])->name('services.show.lv');
-    Route::view('/development', 'template.lv.development')->name('development.lv');
+    Route::get('/development', [DevelopmentController::class, 'indexLv'])->name('development.lv');
+    Route::get('/development/{slug}', [DevelopmentController::class, 'showLv'])->name('development.show.lv');
 });
 
 //angļu val
@@ -29,7 +32,8 @@ Route::prefix('en')->group(function () {
     Route::post('/contact', [ContactController::class, 'sendEn'])->name('contact.en.post');
     Route::get('/services', [ServiceController::class, 'indexEn'])->name('services.en');
     Route::get('/services/{slug}', [ServiceController::class, 'showEn'])->name('services.show.en');
-    Route::view('/development', 'template.en.development-en')->name('development.en');
+    Route::get('/development', [DevelopmentController::class, 'indexEn'])->name('development.en');
+    Route::get('/development/{slug}', [DevelopmentController::class, 'showEn'])->name('development.show.en');
 });
 
 // Admins
@@ -57,6 +61,14 @@ Route::prefix('mz-admin')->group(function () {
         Route::get('/services/{service}/edit', [AdminServiceController::class, 'edit'])->name('admin.services.edit');
         Route::put('/services/{service}', [AdminServiceController::class, 'update'])->name('admin.services.update');
         Route::delete('/services/{service}', [AdminServiceController::class, 'destroy'])->name('admin.services.destroy');
+        
+        // Developments 
+        Route::get('/developments', [AdminDevelopmentController::class, 'index'])->name('admin.developments.index');
+        Route::get('/developments/create', [AdminDevelopmentController::class, 'create'])->name('admin.developments.create');
+        Route::post('/developments', [AdminDevelopmentController::class, 'store'])->name('admin.developments.store');
+        Route::get('/developments/{development}/edit', [AdminDevelopmentController::class, 'edit'])->name('admin.developments.edit');
+        Route::put('/developments/{development}', [AdminDevelopmentController::class, 'update'])->name('admin.developments.update');
+        Route::delete('/developments/{development}', [AdminDevelopmentController::class, 'destroy'])->name('admin.developments.destroy');
     });
 });
 

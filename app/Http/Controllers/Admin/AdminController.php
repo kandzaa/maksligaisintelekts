@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\News;
 use App\Models\Service;
+use App\Models\Development;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -50,7 +51,8 @@ class AdminController extends Controller
     {
         $totalNews = News::count();
         $totalServices = Service::count();
+        $totalDevelopments = Development::count();
         
-        return view('admin.dashboard', compact('totalNews', 'totalServices'));
+        return view('admin.dashboard', compact('totalNews', 'totalServices', 'totalDevelopments'));
     }
 }

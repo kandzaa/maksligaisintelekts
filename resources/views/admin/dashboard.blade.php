@@ -131,33 +131,19 @@
             <div class="card-body">
                 <div class="row align-items-center">
                     <div class="col">
-                        <h5 class="card-title mb-0">Published</h5>
-                        <p class="card-text display-4">{{ App\Models\News::where('published', true)->count() }}</p>
+                        <h5 class="card-title mb-0">Developments</h5>
+                        <p class="card-text display-4">{{ $totalDevelopments }}</p>
                     </div>
                     <div class="col-auto">
-                        <i class="fas fa-check-circle fa-2x opacity-75"></i>
+                        <i class="fas fa-code fa-2x opacity-75"></i>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card stat-card">
-            <div class="card-body">
-                <div class="row align-items-center">
-                    <div class="col">
-                        <h5 class="card-title mb-0">Draft</h5>
-                        <p class="card-text display-4">{{ App\Models\News::where('published', false)->count() }}</p>
-                    </div>
-                    <div class="col-auto">
-                        <i class="fas fa-edit fa-2x opacity-75"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
+
 
 <div class="row">
     <div class="col-lg-8">
@@ -258,6 +244,54 @@
                 @endif
             </div>
         </div>
+        
+        <div class="card mt-4">
+            <div class="card-header">
+                <h5 class="card-title mb-0">Recent Developments</h5>
+            </div>
+            <div class="card-body">
+                @if($recentDevelopments = App\Models\Development::latest()->take(5)->get())
+                    <div class="dashboard-table">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Title</th>
+                                        <th>Status</th>
+                                        <th>Order</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($recentDevelopments as $development)
+                                        <tr>
+                                            <td>{{ Str::limit($development->title_en, 50) }}</td>
+                                            <td>
+                                                @if($development->published)
+                                                    <span class="dashboard-status-badge dashboard-status-published">Published</span>
+                                                @else
+                                                    <span class="dashboard-status-badge dashboard-status-draft">Draft</span>
+                                                @endif
+                                            </td>
+                                            <td>
+                                                <span style="color: rgba(255, 255, 255, 0.7);">{{ $development->order ?? 0 }}</span>
+                                            </td>
+                                            <td>
+                                                <a href="{{ route('admin.developments.edit', $development) }}" class="btn btn-sm dashboard-action-btn">
+                                                    <i class="fas fa-edit"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                @else
+                    <p class="text-muted">No developments found.</p>
+                @endif
+            </div>
+        </div>
     </div>
 
     <div class="col-lg-4">
@@ -273,11 +307,17 @@
                     <a href="{{ route('admin.services.create') }}" class="btn btn-primary">
                         <i class="fas fa-plus me-2"></i> Add New Service
                     </a>
+                    <a href="{{ route('admin.developments.create') }}" class="btn btn-primary">
+                        <i class="fas fa-plus me-2"></i> Add Development
+                    </a>
                     <a href="{{ route('admin.news.index') }}" class="btn btn-outline-secondary">
                         <i class="fas fa-list me-2"></i> Manage All News
                     </a>
                     <a href="{{ route('admin.services.index') }}" class="btn btn-outline-secondary">
                         <i class="fas fa-list me-2"></i> Manage All Services
+                    </a>
+                    <a href="{{ route('admin.developments.index') }}" class="btn btn-outline-secondary">
+                        <i class="fas fa-list me-2"></i> Manage All Developments
                     </a>
                 </div>
             </div>

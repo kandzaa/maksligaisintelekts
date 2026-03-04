@@ -160,7 +160,7 @@
           <div class="service-content">
             <h3 class="service-title">web development</h3>
             <p class="service-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque repellendus minima reiciendis nobis dolore obcaecati.</p>
-          </div><a class="read-more" href="{{ route('service-web-development.en') }}">read more<i class="bi bi-arrow-right icon "></i></a>
+          </div><a class="read-more" href="{{ route('development.en') }}">read more<i class="bi bi-arrow-right icon "></i></a>
         </div>
       </div>
       <div class="col-12 col-md-6  col-lg-4 mx-auto ">
@@ -187,7 +187,7 @@
           <div class="service-content">
             <h3 class="service-title">Apps development</h3>
             <p class="service-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque repellendus minima reiciendis nobis dolore obcaecati.</p>
-          </div><a class="read-more" href="{{ route('service-apps.en') }}">read more<i class="bi bi-arrow-right icon "></i></a>
+          </div><a class="read-more" href="{{ route('development.en') }}">read more<i class="bi bi-arrow-right icon "></i></a>
         </div>
       </div>
       <div class="col-12 col-md-6  col-lg-4 mx-auto  ">

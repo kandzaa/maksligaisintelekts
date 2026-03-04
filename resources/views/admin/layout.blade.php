@@ -6,6 +6,7 @@
     <title>@yield('title', 'MZ Admin Dashboard') - MZ Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="{{ asset('css/vendors/flaticon/flaticon.css') }}" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -221,6 +222,11 @@
                         <li class="nav-item">
                             <a class="nav-link {{ request()->routeIs('admin.services.*') ? 'active' : '' }}" href="{{ route('admin.services.index') }}">
                                 <i class="fas fa-cogs me-2"></i> Services
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ request()->routeIs('admin.developments.*') ? 'active' : '' }}" href="{{ route('admin.developments.index') }}">
+                                <i class="fas fa-code me-2"></i> Developments
                             </a>
                         </li>
                     </ul>

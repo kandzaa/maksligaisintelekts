@@ -26,60 +26,31 @@
       </div>
       </div>
     <div class="row gx-4 gy-4 services-row ">  
-      <div class="col-12 col-md-6  col-lg-4 mx-auto ">
-        <div class="box service-box  wow fadeInUp reveal-start" data-wow-offset="0" data-wow-delay=".1s">
-          <div class="service-icon"><i class="flaticon-web-development font-icon"></i></div><span class="service-num hollow-text">1    </span>
-          <div class="service-content">
-            <h3 class="service-title">web izstrāde</h3>
-            <p class="service-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque repellendus minima reiciendis nobis dolore obcaecati.</p>
-          </div><a class="read-more" href="#0">read more<i class="bi bi-arrow-right icon "></i></a>
+      @forelse($developments as $index => $development)
+        <div class="col-12 col-md-6  col-lg-4 mx-auto ">
+          <div class="box service-box  wow fadeInUp reveal-start" data-wow-offset="0" data-wow-delay="{{ $index * 0.1 }}s">
+            @if($development->image)
+              <div class="service-icon">
+                <img src="{{ asset('assets/images/developments/' . $development->image) }}" alt="{{ $development->title_lv }}" style="width: 60px; height: 60px; object-fit: cover; border-radius: 8px;">
+              </div>
+            @elseif($development->icon_class)
+              <div class="service-icon"><i class="{{ $development->icon_class }} font-icon"></i></div>
+            @else
+              <div class="service-icon"><i class="flaticon-web-development font-icon"></i></div>
+            @endif
+            <span class="service-num hollow-text">{{ $index + 1 }}</span>
+            <div class="service-content">
+              <h3 class="service-title">{{ $development->title_lv }}</h3>
+              <p class="service-text">{{ Str::limit($development->description_lv ?: strip_tags($development->content_lv), 120) }}</p>
+            </div>
+            <a class="read-more" href="{{ route('development.show.lv', $development->slug) }}">Lasīt vairāk<i class="bi bi-arrow-right icon "></i></a>
+          </div>
         </div>
-      </div>
-      <div class="col-12 col-md-6  col-lg-4 mx-auto ">
-        <div class="box service-box  wow fadeInUp reveal-start" data-wow-offset="0" data-wow-delay=".2s">
-          <div class="service-icon"><i class="flaticon-profile font-icon"></i></div><span class="service-num hollow-text">2    </span>
-          <div class="service-content">
-            <h3 class="service-title">Aplikāciju izstrāde</h3>
-            <p class="service-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque repellendus minima reiciendis nobis dolore obcaecati.</p>
-          </div><a class="read-more" href="#0">read more<i class="bi bi-arrow-right icon "></i></a>
+      @empty
+        <div class="col-12 text-center">
+          <p style="color: rgba(255, 255, 255, 0.6);">Pašlaik nav pieejami MI izstrādes pakalpojumi.</p>
         </div>
-      </div>
-      <div class="col-12 col-md-6  col-lg-4 mx-auto  ">
-        <div class="box service-box  wow fadeInUp reveal-start" data-wow-offset="0" data-wow-delay=".3s">
-          <div class="service-icon"><i class="flaticon-strategy font-icon"></i></div><span class="service-num hollow-text">3    </span>
-          <div class="service-content">
-            <h3 class="service-title">Programmatūras izstrāde</h3>
-            <p class="service-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque repellendus minima reiciendis nobis dolore obcaecati.</p>
-          </div><a class="read-more" href="#0">read more<i class="bi bi-arrow-right icon "></i></a>
-        </div>
-      </div>
-      <div class="col-12 col-md-6  col-lg-4 mx-auto  ">
-        <div class="box service-box  wow fadeInUp reveal-start" data-wow-offset="0" data-wow-delay=".4s">
-          <div class="service-icon"><i class="flaticon-nanotechnology font-icon"></i></div><span class="service-num hollow-text">4    </span>
-          <div class="service-content">
-            <h3 class="service-title">API izstrāde</h3>
-            <p class="service-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque repellendus minima reiciendis nobis dolore obcaecati.</p>
-          </div><a class="read-more" href="#0">read more<i class="bi bi-arrow-right icon "></i></a>
-        </div>
-      </div>
-      <div class="col-12 col-md-6  col-lg-4 mx-auto  ">
-        <div class="box service-box  wow fadeInUp reveal-start" data-wow-offset="0" data-wow-delay=".5s">
-          <div class="service-icon"><i class="flaticon-web-domain font-icon"></i></div><span class="service-num hollow-text">5    </span>
-          <div class="service-content">
-            <h3 class="service-title">Datubāžu izstrāde</h3>
-            <p class="service-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque repellendus minima reiciendis nobis dolore obcaecati.</p>
-          </div><a class="read-more" href="#0">read more<i class="bi bi-arrow-right icon "></i></a>
-        </div>
-      </div>
-      <div class="col-12 col-md-6  col-lg-4 mx-auto  ">
-        <div class="box service-box  wow fadeInUp  reveal-start" data-wow-offset="0" data-wow-delay=".6s">
-          <div class="service-icon"><i class="flaticon-search font-icon"></i></div><span class="service-num hollow-text">6    </span>
-          <div class="service-content">
-            <h3 class="service-title">DevOps services</h3>
-            <p class="service-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque repellendus minima reiciendis nobis dolore obcaecati.</p>
-          </div><a class="read-more" href="#0">read more<i class="bi bi-arrow-right icon "></i></a>
-        </div>
-      </div>
+      @endforelse
     </div>
   </div>
 </section>

@@ -2,7 +2,7 @@
 
 @section('content')
 <section class="d-flex align-items-center page-hero  inner-page-hero " id="page-hero">
-  <div class="overlay-photo-image-bg parallax" data-bg-img="assets/images/hero/inner-page-hero.jpg" data-bg-opacity="1"></div>
+  <div class="overlay-photo-image-bg parallax" data-bg-img="{{ asset('assets/images/hero/inner-page-hero.jpg') }}" data-bg-opacity="1"></div>
   <div class="overlay-color" data-bg-opacity=".75"></div>
   <div class="container">
     <div class="hero-text-area centerd">
