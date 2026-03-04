@@ -1,6 +1,8 @@
 @extends('layouts.app-en')
 
 @section('title', $news->title_en . ' - Māksligais Intelekts')
+@section('meta_description', Str::limit(strip_tags($news->content_en), 160))
+@section('meta_keywords', $news->title_en . ', news, artificial intelligence, technology updates')
 
 @section('headerClass', 'inner-page-header')
 

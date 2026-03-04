@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title', $development->title_lv . ' - Māksligais Intelekts')
+@section('meta_description', Str::limit(strip_tags($development->content_lv), 160))
+@section('meta_keywords', $development->title_lv . ', mākslā intelekta izstrāde, MI, mākslināšana, tehnoloģijas, programmatūra')
+
 @section('content')
 <section class="d-flex align-items-center page-hero  inner-page-hero " id="page-hero">
   <div class="overlay-photo-image-bg parallax" data-bg-img="{{ asset('assets/images/hero/inner-page-hero.jpg') }}" data-bg-opacity="1"></div>

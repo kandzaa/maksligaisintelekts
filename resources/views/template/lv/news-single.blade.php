@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('title', $news->title_lv . ' - Māksligais Intelekts')
+@section('meta_description', Str::limit(strip_tags($news->content_lv), 160))
+@section('meta_keywords', $news->title_lv . ', jaunumi, māksligais intelekts, ziņas')
 
 @section('headerClass', 'inner-page-header')
 

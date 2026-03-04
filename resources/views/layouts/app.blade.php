@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="description" content="IT Solutions &amp; Business Services Responsive Website">
+    <meta name="description" content="@yield('meta_description', 'IT Solutions & Business Services Responsive Website')">
+    <meta name="keywords" content="@yield('meta_keywords', 'IT risinājumi, biznessa risinājumi, tīmekļa izstrāde, programmatūra, tehnoloģijas, Flex-it')">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <link rel="icon" href="{{ asset('assets/images/fav-icon/fav-icon.png') }}">

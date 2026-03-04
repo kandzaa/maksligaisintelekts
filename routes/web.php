@@ -9,6 +9,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\DevelopmentController;
+use App\Http\Controllers\SitemapController;
 
 // Latviski routes
 Route::prefix('lv')->group(function () {
@@ -71,6 +72,9 @@ Route::prefix('mz-admin')->group(function () {
         Route::delete('/developments/{development}', [AdminDevelopmentController::class, 'destroy'])->name('admin.developments.destroy');
     });
 });
+
+// Sitemap route
+Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
 
 // default uz latviešu
 Route::redirect('/', '/lv');

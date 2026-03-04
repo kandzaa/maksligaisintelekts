@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="@yield('meta_description', 'IT Solutions & Business Services Responsive Website')">
+  <meta name="keywords" content="@yield('meta_keywords', 'IT solutions, business solutions, web development, software, technology, Flex-it')">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   <link rel="icon" href="{{ asset('assets/images/fav-icon/fav-icon.png') }}">

@@ -1,5 +1,9 @@
 @extends('layouts.app-en')
 
+@section('title', 'Māksligais Intelekts - IT Solutions & Artificial Intelligence Development')
+@section('meta_description', 'Māksligais Intelekts provides innovative IT solutions, artificial intelligence development, software development and business solutions. Focused on cutting-edge technologies and client requirements.')
+@section('meta_keywords', 'artificial intelligence, IT solutions, software development, machine learning, business solutions, technology, AI development, Flex-it')
+
 @section('content')
 <section class="page-hero hero-swiper-slider slide-effect  d-flex align-items-center" id="page-hero">
   <div class="particles-js  bubels" id="particles-js"></div>
@@ -293,7 +297,7 @@
           <div class="row">
             <div class="col-12 col-lg-4 ">
               <div class="post-box">     <a class="post-link" href="#0" title="How litespeed technology works to speed up your site ">
-                  <div class="post-img-wrapper  "><img class=" parallax-img   post-img" loading="lazy" src="{{ asset('assets/images/blog/post-images/1.jpg') }}" alt=""/><span class="post-date"><span class="day">05 </span>oct 2022     </span></div></a>
+                  <div class="post-img-wrapper  "><img class=" parallax-img   post-img" loading="lazy" src="{{ asset('assets/images/blog/post-images/1.jpg') }}" alt="Litespeed technology for website optimization"/><span class="post-date"><span class="day">05 </span>oct 2022     </span></div></a>
                 <div class="post-summary">
                   <div class="post-info"><a class="info post-cat" href="#"> <i class="bi bi-bookmark icon"></i>hosting</a><a class="info post-author" href="#"> <i class=" bi bi-person icon"></i>Allan Moore</a></div>
                   <div class="post-text"><a class="post-link" href="#0">
@@ -305,7 +309,7 @@
             </div>
             <div class="col-12 col-lg-4 ">
               <div class="post-box">     <a class="post-link" href="#0" title="give your website a new look and feel with themes">
-                  <div class="post-img-wrapper  "><img class=" parallax-img   post-img" loading="lazy" src="{{ asset('assets/images/blog/post-images/2.jpg') }}" alt=""/><span class="post-date"><span class="day">15 </span>sep 2022     </span></div></a>
+                  <div class="post-img-wrapper  "><img class=" parallax-img   post-img" loading="lazy" src="{{ asset('assets/images/blog/post-images/2.jpg') }}" alt="Web design themes and website styling"/><span class="post-date"><span class="day">15 </span>sep 2022     </span></div></a>
                 <div class="post-summary">
                   <div class="post-info"><a class="info post-cat" href="#"> <i class="bi bi-bookmark icon"></i>web dev</a><a class="info post-author" href="#"> <i class=" bi bi-person icon"></i>mhmd amin</a></div>
                   <div class="post-text"><a class="post-link" href="#0">
@@ -317,7 +321,7 @@
             </div>
             <div class="col-12 col-lg-4 ">
               <div class="post-box">     <a class="post-link" href="#0" title="the role of domain names in SEO world explained ">
-                  <div class="post-img-wrapper  "><img class=" parallax-img   post-img" loading="lazy" src="{{ asset('assets/images/blog/post-images/3.jpg') }}" alt=""/><span class="post-date"><span class="day">27 </span>aug 2022     </span></div></a>
+                  <div class="post-img-wrapper  "><img class=" parallax-img   post-img" loading="lazy" src="{{ asset('assets/images/blog/post-images/3.jpg') }}" alt="SEO optimization and domain name strategies"/><span class="post-date"><span class="day">27 </span>aug 2022     </span></div></a>
                 <div class="post-summary">
                   <div class="post-info"><a class="info post-cat" href="#"> <i class="bi bi-bookmark icon"></i>SEO</a><a class="info post-author" href="#"> <i class=" bi bi-person icon"></i>yusuf amin</a></div>
                   <div class="post-text"><a class="post-link" href="#0">

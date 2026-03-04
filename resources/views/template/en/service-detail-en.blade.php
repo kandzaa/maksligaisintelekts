@@ -1,5 +1,9 @@
 @extends('layouts.app-en')
 
+@section('title', $service->title_en . ' - Māksligais Intelekts')
+@section('meta_description', Str::limit(strip_tags($service->content_en), 160))
+@section('meta_keywords', $service->title_en . ', services, IT solutions, business solutions, technology services')
+
 @section('content')
 <section class="d-flex align-items-center page-hero  inner-page-hero " id="page-hero">
   <div class="overlay-photo-image-bg parallax" data-bg-img="{{ asset('assets/images/hero/inner-page-hero.jpg') }}" data-bg-opacity="1"></div>
